@@ -1,6 +1,5 @@
 ## Ajudar com a escrita de conteúdo usando latex no [sharelatex](https://www.sharelatex.com)
 
-Indico colocar os imports de pacotes todos no mesmo lugar e usar comentarios.
 
 ### lista automática de simbolos
 1 - Importe o pacote (dentro de main.tex)
@@ -233,3 +232,41 @@ t_{i+1} = \left \{
 ![tabela-3](img/t3.png)
 
 ### algoritmo em pt
+
+
+```tex
+% pacotes necessários
+
+% ###############################
+% # seus pacotes ################
+% algoritmo em pt --
+\usepackage[portuguese,algoruled,lined,linesnumbered]{algorithm2e}
+% --
+% ###############################
+% # end pacote      #############
+
+
+% uso
+% ver mais palavras reservadas: http://www.cs.toronto.edu/~frank/Useful/algorithm2e.pdf
+
+\begin{algorithm}[H]
+\label{algo:ag}
+\SetAlgoLined
+%\KwResult{Write here the result }
+ cria e inicializa população de indivíduos\;
+ \Enqto{condições de parada é falsa}{
+  avaliar aptidão de cada indivíduo da população\;
+  seleção dos indivíduos\;
+  cruzamento dos indivíduos\;
+  mutação sobre novos indivíduos\;
+  substituição da população antiga pelos novos indivíduos\;
+ }
+ \caption{Algoritmo Genético \cite{Sastry14}.}
+\end{algorithm}
+```
+
+![algoritmo em pt](img/algoritmo.png)
+
+--
+
+Aceito paths, espero que ajude :D
