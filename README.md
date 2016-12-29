@@ -129,4 +129,107 @@ t_{i+1} = \left \{
 
 ### tabelas
 
+```tex
+% tabela normal
+
+\begin{table}[ht]
+    \centering
+    \caption{As vezes }
+    \begin{tabular}{|c|c|} \hline
+         Operador AG & Valor Operador  \\ \hline
+         Mutação & 5\%  \\ \hline
+        Cruzamento & 70\% \\ \hline
+        Seleção & 90\% \\ \hline
+        Gerações & -- \\ \hline 
+        População & 20\\ \hline
+    \end{tabular}
+    \label{tb:wang1}
+\end{table}
+```
+
+![tabela-1](img/t1.png)
+
+--
+
+```tex
+% pacotes necessários
+
+% ###############################
+% # seus pacotes ################
+% -- usar cor na tabela
+\usepackage[table]{xcolor}
+\definecolor{lgray}{RGB}{230,230,230}
+% --
+% ###############################
+% # end pacote      #############
+
+
+
+% uso
+
+% tabela normal, com título em destaque
+% basta chamar a cor definida antes da linha \rowcolor{lgray}
+\begin{table}[ht]
+    \centering
+    \caption{As vezes }
+    \begin{tabular}{|c|c|} \hline
+        \rowcolor{lgray}
+        Operador AG & Valor Operador  \\ \hline
+        Mutação & 5\%  \\ \hline
+        Cruzamento & 70\% \\ \hline
+        Seleção & 90\% \\ \hline
+        Gerações & -- \\ \hline 
+        População & 20\\ \hline
+    \end{tabular}
+    \label{tb:wang1}
+\end{table}
+```
+
+![tabela-2](img/t2.png)
+
+--
+```tex
+% pacotes necessários
+
+% ###############################
+% # seus pacotes ################
+% -- tabela complexa com mesclagem
+\usepackage{booktabs}
+\usepackage{multirow}
+% --
+% -- usar cor na tabela
+\usepackage[table]{xcolor}
+\definecolor{lgray}{RGB}{230,230,230}
+% --
+% ###############################
+% # end pacote      #############
+
+
+% uso
+
+% tabela complexa com mesclagem (cor do exemplo anterior)
+\begin{table}[ht]
+    \centering
+    \caption{Média e desvio padrão com --.}
+    \begin{tabular}{|c|c|c|c|c|c|}\hline
+        \rowcolor{lgray}
+        & CMIG4 & ELET6 & PETR4 & USIM5 & VALE5 \\ \hline
+        % \cline{2-6}     -> linha vai começar de coluna 2 até 6
+        % \multirow{2}{*} -> mescla duas colunas
+        % \hline\hline    -> insere duas linhas por completo para facilitar a leitura
+        \multirow{2}{*}{Lucro anual \%} & 6,32  & 8,03 & 31,69 & 25,24  & 161,34\\ \cline{2-6}
+                                        & 6,05  & 10,55 & 17,25 & 23,97 & 107,07\\ \hline\hline
+                                        
+        \multirow{2}{*}{Taxa de acerto \%} & 66,27  & 69,07  & 75,72    & 67,87  & 88,67\\ \cline{2-6}
+                                           & 6,76   & 10,19  & 13,00    & 10,09  & 6,41\\ \hline\hline
+                                        
+        \multirow{2}{*}{Movimentações}  & 12,00   & 10,46  & 8,38  & 9,23 & 11,60\\ \cline{2-6}
+                                        & 3,16    & 2,06   & 2,53  & 2,00 & 2,01\\ \hline
+    \end{tabular}
+    \label{tab:validacao}
+\end{table}
+```
+
+![tabela-3](img/t3.png)
+
 ### algoritmo em pt
